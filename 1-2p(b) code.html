@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Concepts</title>
+    <style>
+        body {
+            font-family: Georgia, serif;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Concepts</h1>
+
+    <h2>String Methods</h2>
+    <p id ="stringMethodsOutput"></p>
+    <script>
+        //  string methods
+        const ogString = "Hello, World";
+        let stringMethodsOutput = "";
+
+        //  1. Length of the string
+        stringMethodsOutput += "1. Length of the string: " + ogString.length + "<br> <br>";
+        
+        //  2. Convert to uppercase
+        stringMethodsOutput += "2. Convert to uppercase: " + ogString.toUpperCase() + "<br> <br>";
+
+        //  3. Convert to lowercase
+        stringMethodsOutput += "3. Convert to lowercase: " + ogString.toLowerCase() + "<br> <br>";
+
+        //  4. Extract a part of the string
+        stringMethodsOutput += "4. Extracted part of the string: " + ogString.slice(0, 5) + "<br> <br>";
+
+        //  5. Check if the string includes a specific substring
+        stringMethodsOutput += "5. Check if the string includes 'World': " + ogString.includes("World") + "<br> <br>";
+
+        document.getElementById("stringMethodsOutput").innerHTML = stringMethodsOutput;
+    </script>
+
+    <h2>Number Methods</h2>
+    <p id ="numberMethodsOutput"></p>
+    <script>
+        //  Number methods
+        const numValue = 658.391;
+        let numberMethodsOutput = "";
+
+        //  1. Convert to a fixed number of decimal places
+        numberMethodsOutput += "1. Fixed number (2 decimal places): " + numValue.toFixed(2) + "<br> <br>";
+
+        //  2. Convert to exponential notation
+        numberMethodsOutput += "2. Exponential notation (3 digits): " + numValue.toExponential(3) + "<br> <br>";
+
+        //  3. Find the largest integer less than or equal to the number
+        numberMethodsOutput += "3. Floor value: " + Math.floor(numValue) + "<br> <br>";
+
+        //  4. Find the smallest integer greater than or equal to the number
+        numberMethodsOutput += "4. Ceil value: " + Math.ceil(numValue) + "<br> <br>";
+
+        //  5. Check if the value is NaN (Not-a-Number)
+        numberMethodsOutput += "5. Is Not-a-Number: " + isNaN(numValue) + "<br> <br>";
+
+        document.getElementById("numberMethodsOutput").innerHTML = numberMethodsOutput;
+    </script>
+
+    <h2>Array Methods</h2>
+    <p id="arrayMethodsOutput"></p>
+    <script>
+        //  Array methods
+        const mixedArray = [1, "two", 3, "four", 5];
+        let arrayMethodsOutput = "";
+
+        //  1. Join array elements into a string
+        arrayMethodsOutput += "1. Joined string: " + mixedArray.join(", ") + "<br> <br>";
+
+        //  2. Add elements to the end of the array and return the new length
+        arrayMethodsOutput += "2. New array length: " + mixedArray.push("six", 7) + "<br> <br>";
+        arrayMethodsOutput += "Updated array: " + mixedArray + "<br> <br>";
+
+        //  3. Remove the last element from the array and return it
+        arrayMethodsOutput += "3. Popped element: " + mixedArray.pop() + "<br> <br>";
+        arrayMethodsOutput += "Updated array: " + mixedArray + "<br> <br>";
+
+        //  4. Reverse the order of the array elements
+        arrayMethodsOutput += "4. Reversed array: " + mixedArray.reverse() + "<br> <br>";
+
+        //  5. Check if an element exists in the array
+        arrayMethodsOutput += "5. Includes 'two' element: " + mixedArray.includes("two") + "<br> <br>";
+
+        document.getElementById("arrayMethodsOutput").innerHTML = arrayMethodsOutput;
+    </script>
+
+    <h2>Date Methods</h2>
+    <p id="dateMethodsOutput"></p>
+    <script>
+        // Date methods
+        const currentDate = new Date();
+        let dateMethodsOutput = "";
+
+        // 1. Get the current date
+        dateMethodsOutput += "1. Current Date: " + currentDate + "<br> <br>";
+
+        // 2. Get the day of the week (0 = Sunday, 1 = Monday, ...)
+        dateMethodsOutput += "2. Day of the Week (0 = Sunday, 1 = Monday, ...): " + currentDate.getDay() + "<br> <br>";
+
+        // 3. Get the month (0 = January, 1 = February, ...)
+        dateMethodsOutput += "3. Month (0 = January, 1 = February, ...): " + currentDate.getMonth() + "<br> <br>";
+
+        // 4. Get the current year
+        dateMethodsOutput += "4. Current Year: " + currentDate.getFullYear() + "<br> <br>";
+
+        // 5. Get the current time in milliseconds since January 1, 1970
+        dateMethodsOutput += "5. Current Time: " + currentDate.getHours().toString().padStart(2, '0') + ":" + currentDate.getMinutes().toString().padStart(2, '0') + ":" + currentDate.getSeconds().toString().padStart(2, '0') + "<br> <br>";
+
+        document.getElementById("dateMethodsOutput").innerHTML = dateMethodsOutput;
+    </script>
+
+    <h2>Function Methods</h2>
+    <p id="functionMethodsOutput"></p>
+    <script>
+        // Function methods
+        function addNumbers(a, b) {
+            return a + b;
+        }
+        let functionMethodsOutput = "";
+
+        // 1. Convert a function to a string
+        functionMethodsOutput += "1. Function as a String: " + addNumbers.toString() + "<br> <br>";
+
+        // 2. Bind a new context (this) to the function
+        const boundFunction = addNumbers.bind(null, 5);
+        functionMethodsOutput += "2. Bound Function Result: " + boundFunction(10) + "<br> <br>";
+
+        document.getElementById("functionMethodsOutput").innerHTML = functionMethodsOutput;
+    </script>
+
+</body>
+</html>
